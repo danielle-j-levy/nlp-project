@@ -14,7 +14,9 @@ python experiments/bgl_syslog.py    # any workload
 ```
 
 Or open `results.ipynb`, which runs every experiment and assembles the results
-table (any corpus whose data isn't present falls back to its published value).
+table. Its first cell self-bootstraps (clones the repo and installs deps if
+needed), so it also runs as a standalone upload in Google Colab — set `HF_TOKEN`
+for the HuggingFace-hosted corpora.
 
 Each script reports prefix caching, PIC, and PIC-processed reuse (with its
 in-session / cross-session split). The accounting rules — second-occurrence
