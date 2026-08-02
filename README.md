@@ -13,10 +13,12 @@ export HF_TOKEN=...                 # needed for the HuggingFace-hosted corpora
 python experiments/bgl_syslog.py    # any workload
 ```
 
-Or open `results.ipynb`, which runs every experiment and assembles the results
-table. Its first cell self-bootstraps (clones the repo and installs deps if
-needed), so it also runs as a standalone upload in Google Colab — set `HF_TOKEN`
-for the HuggingFace-hosted corpora.
+Or open `results.ipynb` — it is fully self-contained (every function inlined; the
+only imports are the standard library plus `transformers`/`datasets`/
+`huggingface_hub`/`pyarrow`/`pandas`, auto-installed by the first cell). It needs
+no other file from this repo, so it runs as a standalone upload in Google Colab.
+Set `HF_TOKEN` for the HuggingFace-hosted corpora; local-data corpora read from
+`./data/…`.
 
 Each script reports prefix caching, PIC, and PIC-processed reuse (with its
 in-session / cross-session split). The accounting rules — second-occurrence
