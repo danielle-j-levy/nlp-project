@@ -8,8 +8,13 @@ Data: local data/tau2/final/*telecom*.json (sierra-research/tau2-bench).
 import _bootstrap
 from tau2_common import run_domain
 
-if __name__ == "__main__":
+
+def main():
     d = run_domain("telecom")
     _bootstrap.emit("Stateful API responses / tau2 telecom",
                     {"prefix": 60.70, "pic": 3.73, "pic_proc": 3.73,
                      "in_sess": 0.00, "cross_sess": 3.73}, d)
+
+
+if __name__ == "__main__":
+    main()

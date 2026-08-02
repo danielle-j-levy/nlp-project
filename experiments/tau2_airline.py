@@ -10,8 +10,13 @@ Data: local data/tau2/final/*airline*.json (sierra-research/tau2-bench).
 import _bootstrap
 from tau2_common import run_domain
 
-if __name__ == "__main__":
+
+def main():
     d = run_domain("airline")
     _bootstrap.emit("Stateful API responses / tau2 airline",
                     {"prefix": 12.81, "pic": 1.31, "pic_proc": 1.31,
                      "in_sess": 1.31, "cross_sess": 0.00}, d)
+
+
+if __name__ == "__main__":
+    main()

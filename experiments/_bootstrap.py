@@ -13,7 +13,14 @@ sys.path.insert(0, os.path.join(ROOT, "core"))
 os.chdir(ROOT)
 
 
+# Every emit() call records here, so a notebook / driver can collect the
+# computed numbers without parsing stdout.
+RESULTS = {}
+
+
 def emit(row, published, computed):
+    RESULTS[row] = {"published": published, "computed": computed}
     print(f"\n{row}")
     print("  published:", json.dumps(published))
     print("  computed :", json.dumps(computed))
+    return computed

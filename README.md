@@ -13,6 +13,9 @@ export HF_TOKEN=...                 # needed for the HuggingFace-hosted corpora
 python experiments/bgl_syslog.py    # any workload
 ```
 
+Or open `results.ipynb`, which runs every experiment and assembles the results
+table (any corpus whose data isn't present falls back to its published value).
+
 Each script reports prefix caching, PIC, and PIC-processed reuse (with its
 in-session / cross-session split). The accounting rules — second-occurrence
 reuse, whole-stream denominator, one trajectory per task, ≥500-token spans, and

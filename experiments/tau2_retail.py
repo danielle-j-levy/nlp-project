@@ -8,8 +8,13 @@ Data: local data/tau2/final/*retail*.json (sierra-research/tau2-bench).
 import _bootstrap
 from tau2_common import run_domain
 
-if __name__ == "__main__":
+
+def main():
     d = run_domain("retail")
     _bootstrap.emit("Stateful API responses / tau2 retail",
                     {"prefix": 23.28, "pic": 23.08, "pic_proc": 23.08,
                      "in_sess": 0.33, "cross_sess": 22.75}, d)
+
+
+if __name__ == "__main__":
+    main()
